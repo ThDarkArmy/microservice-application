@@ -32,7 +32,9 @@ public class NotificationService {
     }
 
     public Notification update(Long id, Notification notification) {
-        Notification existingNotification = findById(id);
+        Notification existingNotification = notificationRepository.findById(id)
+                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Notification not found"));
+                
         existingNotification.setOrderId(notification.getOrderId());
         existingNotification.setRecipient(notification.getRecipient());
         existingNotification.setType(notification.getType());

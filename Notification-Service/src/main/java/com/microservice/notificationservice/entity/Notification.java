@@ -24,8 +24,8 @@ public class Notification {
 
     public enum Status {
         PENDING,
-        SENT,
-        FAILED
+        CONFIRMED,
+        CANCELLED
     }
 
     @Id
