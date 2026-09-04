@@ -1,0 +1,22 @@
+Microservices Interview Questions
+
+1. What are microservices, and how do they differ from a monolithic architecture?
+2. What are the main benefits of microservices?
+3. What are the main challenges of adopting microservices?
+4. How should service boundaries be identified?
+5. What is service discovery, and why is it needed?
+6. What is an API gateway, and what responsibilities can it handle?
+7. What is the difference between synchronous and asynchronous communication?
+8. When would you use REST, gRPC, or messaging between services?
+9. What is eventual consistency?
+10. What is the Saga pattern, and how does it manage distributed transactions?
+11. What is the Circuit Breaker pattern?
+12. What are retries, timeouts, and bulkheads in resilient systems?
+13. How do you make microservices idempotent?
+14. What is distributed tracing, and why is it important?
+15. How do you monitor microservices in production?
+16. How should authentication and authorization be handled across services?
+17. What is containerization, and why is it useful for microservices?
+18. How do you version APIs in a microservices architecture?
+19. How do you manage configuration and secrets for microservices?
+20. How do you test a microservices-based application?

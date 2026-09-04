@@ -1,0 +1,22 @@
+Spring Boot Interview Questions
+
+1. What is Spring Boot, and how is it different from the Spring Framework?
+2. What are the main advantages of using Spring Boot?
+3. What does auto-configuration mean in Spring Boot?
+4. What are Spring Boot starters?
+5. What is the purpose of the @SpringBootApplication annotation?
+6. What is dependency injection in Spring?
+7. What is the difference between constructor injection and field injection?
+8. What are Spring beans, and how are they created?
+9. What is the Spring application context?
+10. What are bean scopes in Spring?
+11. How do profiles work in Spring Boot?
+12. How do you configure application properties in Spring Boot?
+13. What is Spring Boot Actuator?
+14. How do you create a REST controller in Spring Boot?
+15. What is the difference between @Controller and @RestController?
+16. How do you handle exceptions globally in a Spring Boot REST API?
+17. How do you validate request data in Spring Boot?
+18. What is Spring Data JPA, and how does it simplify database access?
+19. How do you secure a Spring Boot application?
+20. How do you test a Spring Boot application?

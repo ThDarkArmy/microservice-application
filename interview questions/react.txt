@@ -1,0 +1,22 @@
+React Interview Questions
+
+1. What is React, and what problems does it solve?
+2. What is the virtual DOM, and how does React use it?
+3. What is the difference between functional and class components?
+4. What are props, and how are they different from state?
+5. What is state in React, and how do you update it?
+6. What are React Hooks, and why were they introduced?
+7. How does the useEffect Hook work?
+8. What is the purpose of the dependency array in useEffect?
+9. What is the difference between controlled and uncontrolled components?
+10. How do you handle forms in React?
+11. What is conditional rendering in React?
+12. How do lists and keys work in React?
+13. Why should keys be stable and unique?
+14. What is prop drilling, and how can it be avoided?
+15. What is the Context API, and when should it be used?
+16. What is the difference between useMemo and useCallback?
+17. How can you optimize the performance of a React application?
+18. What are error boundaries, and what limitations do they have?
+19. How do you fetch data from an API in a React component?
+20. What is server-side rendering, and how does it differ from client-side rendering?

@@ -1,0 +1,22 @@
+Redux Interview Questions
+
+1. What is Redux, and why is it used?
+2. What are the core principles of Redux?
+3. What is a Redux store?
+4. What is an action in Redux?
+5. What is a reducer, and what rules should reducers follow?
+6. What is dispatch in Redux?
+7. How does the Redux data flow work?
+8. What is the difference between Redux and React Context?
+9. What is middleware in Redux?
+10. How does Redux Thunk work?
+11. What is Redux Saga, and how does it differ from Redux Thunk?
+12. What is Redux Toolkit, and why is it recommended?
+13. What is a slice in Redux Toolkit?
+14. What is createSlice used for?
+15. What is createAsyncThunk used for?
+16. How do selectors work in Redux?
+17. What is memoization, and how can selectors use it?
+18. How do you handle loading, success, and error states in Redux?
+19. How do you persist Redux state across browser refreshes?
+20. What are common mistakes to avoid when designing a Redux store?
