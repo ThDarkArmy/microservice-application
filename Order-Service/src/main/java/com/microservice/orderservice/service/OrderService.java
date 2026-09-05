@@ -4,12 +4,14 @@ import java.math.BigDecimal;
 import java.util.List;
 
 import org.springframework.http.HttpStatus;
+import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestClient;
 import org.springframework.web.client.RestClientResponseException;
 import org.springframework.web.server.ResponseStatusException;
 
 import com.microservice.orderservice.entity.Order;
+import com.microservice.orderservice.messaging.OrderCreatedEvent;
 import com.microservice.orderservice.repository.OrderRepository;
 import com.microservice.orderservice.client.NotificationRequest;
 import com.microservice.orderservice.client.ProductResponse;
@@ -20,13 +22,16 @@ public class OrderService {
     private final OrderRepository orderRepository;
     private final RestClient inventoryClient;
     private final RestClient notificationClient;
+    private final KafkaTemplate<String, OrderCreatedEvent> kafkaTemplate;
 
     public OrderService(OrderRepository orderRepository,
             @org.springframework.beans.factory.annotation.Qualifier("inventoryClient") RestClient inventoryClient,
-            @org.springframework.beans.factory.annotation.Qualifier("notificationClient") RestClient notificationClient) {
+            @org.springframework.beans.factory.annotation.Qualifier("notificationClient") RestClient notificationClient,
+            KafkaTemplate<String, OrderCreatedEvent> kafkaTemplate) {
         this.orderRepository = orderRepository;
         this.inventoryClient = inventoryClient;
         this.notificationClient = notificationClient;
+        this.kafkaTemplate = kafkaTemplate;
     }
 
     public List<Order> findAll() {
@@ -48,10 +53,12 @@ public class OrderService {
         }
         order.setTotalPrice(
                 BigDecimal.valueOf(productInfo.getPrice()).multiply(BigDecimal.valueOf(order.getQuantity())));
-        
 
         Order createdOrder = orderRepository.save(order);
-        sendCreationNotification(createdOrder);
+
+
+        publishOrderCreated(createdOrder);
+        
         return createdOrder;
     }
 
@@ -59,16 +66,18 @@ public class OrderService {
 
         ProductResponse productInfo = getProductInfo(order.getProductId());
         if (productInfo.getQuantity() < order.getQuantity()) {
-            throw new ResponseStatusException(HttpStatus.CONFLICT, "Insufficient inventory for product " + order.getProductId());
+            throw new ResponseStatusException(HttpStatus.CONFLICT,
+                    "Insufficient inventory for product " + order.getProductId());
         }
 
         Order existingOrder = findById(id);
         existingOrder.setProductId(order.getProductId());
         existingOrder.setCustomerEmail(order.getCustomerEmail());
         existingOrder.setQuantity(order.getQuantity());
-        existingOrder.setTotalPrice(BigDecimal.valueOf(productInfo.getPrice()).multiply(BigDecimal.valueOf(order.getQuantity())));
+        existingOrder.setTotalPrice(
+                BigDecimal.valueOf(productInfo.getPrice()).multiply(BigDecimal.valueOf(order.getQuantity())));
         existingOrder.setStatus(order.getStatus());
-        Order order2 =  orderRepository.save(existingOrder);
+        Order order2 = orderRepository.save(existingOrder);
         updateNotification(order2);
         return order2;
     }
@@ -102,24 +111,13 @@ public class OrderService {
         }
     }
 
-    private void sendCreationNotification(Order order) {
-        
-        NotificationRequest notification = new NotificationRequest(
+    private void publishOrderCreated(Order order) {
+        OrderCreatedEvent event = new OrderCreatedEvent(
                 order.getId(),
                 order.getCustomerEmail(),
-                "EMAIL",
-                "Order " + order.getId() + " was created",
-                order.getStatus());
-        try {
-            notificationClient.post()
-                    .uri("/api/notifications")
-                    .body(notification)
-                    .retrieve()
-                    .toBodilessEntity();
-        } catch (RestClientResponseException exception) {
-            throw new ResponseStatusException(HttpStatus.BAD_GATEWAY,
-                    "Order created but notification failed", exception);
-        }
+                order.getTotalPrice(),
+                order.getStatus().name());
+        kafkaTemplate.send("order.created", order.getId().toString(), event);
     }
 
     private void updateNotification(Order order) {
@@ -132,7 +130,7 @@ public class OrderService {
                 order.getStatus());
         try {
             notificationClient.put()
-                    .uri("/api/notifications/"+order.getId())
+                    .uri("/api/notifications/" + order.getId())
                     .body(notification)
                     .retrieve()
                     .toBodilessEntity();
