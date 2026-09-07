@@ -1,0 +1,22 @@
+Low-Level Design (LLD) Interview Questions - Java
+
+1. What is low-level design, and how is it different from high-level design?
+2. What steps do you follow when converting requirements into classes and interfaces?
+3. Explain encapsulation, abstraction, inheritance, and polymorphism with Java examples.
+4. What is the difference between composition and inheritance, and when would you prefer composition?
+5. Explain the SOLID principles and give a practical example of Dependency Inversion.
+6. How do you decide whether a behavior belongs in an entity, value object, service, or controller?
+7. What is the difference between an entity and a value object?
+8. How would you design an immutable value object such as Money in Java?
+9. When should you introduce an interface, and when is an interface unnecessary abstraction?
+10. How would you model an object's lifecycle and prevent invalid state transitions?
+11. How would you design a thread-safe class in Java?
+12. What is the difference between synchronized, volatile, AtomicInteger, and concurrent collections?
+13. How do you design a class so that invalid inputs and invalid business states are rejected?
+14. How would you design a repository and service layer for an order management system?
+15. How would you design a parking lot system? What classes, relationships, and allocation rules are needed?
+16. How would you design an elevator system and handle concurrent floor requests?
+17. How would you design a library management system with book copies, loans, and reservations?
+18. How would you design Splitwise to support equal, exact, and percentage expenses?
+19. How would you make a command such as payment or order creation idempotent?
+20. How do you test an LLD design without depending on a database, network, or external API?

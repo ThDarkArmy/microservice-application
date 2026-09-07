@@ -1,0 +1,22 @@
+Kubernetes Interview Questions
+
+1. What is Kubernetes, and what problems does it solve beyond Docker?
+2. Explain the Kubernetes control plane, worker nodes, API server, scheduler, controllers, and etcd.
+3. What is a Pod, and why is it the smallest deployable unit in Kubernetes?
+4. What are Deployments, ReplicaSets, Services, Namespaces, ConfigMaps, and Secrets?
+5. How does Kubernetes maintain the desired state declared in a manifest?
+6. What is the difference between a Deployment, StatefulSet, DaemonSet, Job, and CronJob?
+7. How does a Kubernetes Service discover and route traffic to matching Pods?
+8. Compare ClusterIP, NodePort, and LoadBalancer Services.
+9. What is Ingress, what does an Ingress controller do, and how does it route HTTP traffic?
+10. What are readiness, liveness, and startup probes, and when should each be used?
+11. What are resource requests and limits, and how do they affect scheduling and reliability?
+12. How do Kubernetes ConfigMaps and Secrets provide application configuration, and what are their security limitations?
+13. How does Kubernetes service discovery and DNS work between namespaces?
+14. How would you perform a rolling update, check its progress, and roll it back?
+15. How does Horizontal Pod Autoscaling work, and why are metrics and resource requests important?
+16. How do PersistentVolumes and PersistentVolumeClaims provide storage to workloads?
+17. How would you secure a cluster using RBAC, ServiceAccounts, NetworkPolicies, and non-root containers?
+18. How would you troubleshoot Pods in Pending, ImagePullBackOff, CrashLoopBackOff, Running-but-not-ready, or OOMKilled states?
+19. How would you deploy a Java Spring Boot microservice with a Deployment, Service, ConfigMap, Secret, and health probes?
+20. How would you design observability, backups, CI/CD, and disaster recovery for a production Kubernetes platform?

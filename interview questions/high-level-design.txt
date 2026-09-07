@@ -1,0 +1,22 @@
+High-Level Design (HLD) Interview Questions - Java
+
+1. What is high-level design, and what decisions should an HLD document contain?
+2. How do you clarify functional and non-functional requirements before designing a system?
+3. How do you estimate requests per second, peak traffic, storage, and bandwidth?
+4. When would you choose a monolith, modular monolith, or microservices architecture?
+5. How do you identify service boundaries and data ownership in a microservices system?
+6. What are the tradeoffs between synchronous REST calls and asynchronous messaging?
+7. How would you design a versioned REST API for a Java Spring Boot application?
+8. How do load balancing, horizontal scaling, and stateless services work together?
+9. When would you choose a relational database, document database, key-value store, search engine, or object storage?
+10. What is database sharding, and what problems can it introduce?
+11. How do database replication, read replicas, and partitioning improve scale or availability?
+12. What caching strategy would you use, and how would you handle stale data and cache invalidation?
+13. How do timeouts, retries, circuit breakers, bulkheads, and rate limits improve reliability?
+14. What is idempotency, and how would you implement an idempotency key for a Java API?
+15. What is eventual consistency, and how would you design a Saga for an order workflow?
+16. What is the transactional outbox pattern, and why is it useful with Kafka or another message broker?
+17. How would you design a notification system with retries, dead-letter queues, and duplicate handling?
+18. How would you design a URL shortener, rate limiter, or file storage service?
+19. How would you secure a distributed Java system using OAuth 2.0, authorization, secrets, and least privilege?
+20. How would you monitor and troubleshoot a production system using logs, metrics, traces, health checks, and alerts?

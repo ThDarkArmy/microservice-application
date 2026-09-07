@@ -1,0 +1,22 @@
+Docker Interview Questions
+
+1. What is Docker, and how is a container different from a virtual machine?
+2. What are Docker images, containers, Dockerfiles, registries, volumes, and networks?
+3. What happens internally when you run `docker run nginx`?
+4. What is the difference between a Docker image and a running container?
+5. What is the difference between `CMD` and `ENTRYPOINT` in a Dockerfile?
+6. What is the purpose of `WORKDIR`, `COPY`, `RUN`, `EXPOSE`, and `USER`?
+7. Why are multi-stage Docker builds useful, and how would you use one for a Java application?
+8. What is a `.dockerignore` file, and why should `target`, `node_modules`, and secrets be excluded?
+9. How do Docker image layers and build cache work?
+10. How can you reduce Docker image size and improve build speed?
+11. What is the difference between `EXPOSE` and publishing a port with `-p`?
+12. How do containers communicate with each other on a Docker network?
+13. Why does `localhost` behave differently inside a container, and what hostname should services use instead?
+14. How do Docker volumes differ from bind mounts, and when would you use each?
+15. How do you pass environment variables and configuration to a container safely?
+16. What is Docker Compose, and how would you run a frontend, API, database, and Kafka together?
+17. What does `depends_on` do in Docker Compose, and why does it not guarantee application readiness?
+18. How would you debug a container that exits immediately, cannot connect to another service, or fails its health check?
+19. What Docker security practices should be used in production, including non-root users, image scanning, and secrets?
+20. How would you build, tag, scan, push, and deploy a Java microservice image through CI/CD?

@@ -1,0 +1,22 @@
+Design Patterns with Java Interview Questions
+
+1. What is a design pattern, and how do you decide whether using one improves a design?
+2. What are the creational, structural, behavioral, enterprise, and distributed pattern categories?
+3. What problem does the Factory Method solve, and how would you implement it in Java?
+4. What is the difference between Factory Method and Abstract Factory?
+5. When would you use the Builder pattern, and how can a builder enforce object validity?
+6. What are the benefits and risks of the Singleton pattern in Java?
+7. How does an enum-based Singleton differ from a Spring singleton bean?
+8. What problem does the Adapter pattern solve when integrating a third-party API?
+9. What is the difference between Adapter, Facade, and Proxy?
+10. How does the Decorator pattern add behavior without modifying the wrapped class?
+11. How would you use Decorator for caching, logging, metrics, or authorization?
+12. What is the Strategy pattern, and how can it replace a large conditional statement?
+13. What is the Observer pattern, and when should you use a durable message broker instead?
+14. How does the Command pattern help with queuing, retries, auditing, or undo operations?
+15. What is the State pattern, and when is an enum state machine simpler?
+16. What is the Template Method pattern, and when would composition be better than inheritance?
+17. How do Repository, Service Layer, DTO, and Mapper patterns fit into a Spring Boot application?
+18. What is the Specification pattern, and how can specifications be composed in Java?
+19. Explain Circuit Breaker, Retry, Saga, and Transactional Outbox as distributed-system patterns.
+20. What are common pattern-related anti-patterns, such as god objects, deep inheritance, and pattern overuse?
